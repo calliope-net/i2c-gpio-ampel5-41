@@ -40,3 +40,9 @@ pins.gpio_eIO.OUT,
 pins.gpio_eIO.OUT,
 pins.gpio_eIO.OUT
 )
+loops.everyInterval(1000, function () {
+    pins.comment(pins.pins_text("Pin6=Taste an der Ampel"))
+    if (pins.gpio_readBit(pins.pins_gpio_I2C_ADDRESS(pins.gpio_eI2C_ADDRESS.GPIO_x27), pins.pins_gpio_pin(pins.gpio_epin.Pin6))) {
+        Ampelsteuerung()
+    }
+})
