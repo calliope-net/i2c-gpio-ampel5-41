@@ -29,6 +29,9 @@ function Ampel2 (ro: number, gr: number) {
     pins.gpio_writeBit(pins.pins_gpio_I2C_ADDRESS(pins.gpio_eI2C_ADDRESS.GPIO_x27), pins.pins_gpio_pin(pins.gpio_epin.Pin4), ro == 1)
     pins.gpio_writeBit(pins.pins_gpio_I2C_ADDRESS(pins.gpio_eI2C_ADDRESS.GPIO_x27), pins.pins_gpio_pin(pins.gpio_epin.Pin5), gr == 1)
 }
+function i2cgpioampel541 () {
+    pins.comment(pins.pins_text("calliope-net/i2c-gpio-ampel5-41"))
+}
 pins.gpio_setMode(
 pins.pins_gpio_I2C_ADDRESS(pins.gpio_eI2C_ADDRESS.GPIO_x27),
 pins.gpio_eIO.IN_inverted,
